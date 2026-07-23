@@ -121,7 +121,7 @@ export const FaithValues = () => {
   const radius = 210; // Equal 70px gap spacing between circles (140, 210, 280)
 
   return (
-    <section className="py-12 sm:py-20 relative overflow-hidden bg-[#5EC4F1]/30 border-y border-[#0284C7]/15">
+    <section className="py-16 relative overflow-hidden bg-sky-100 border-y border-[#0284C7]/15">
 
       {/* Subtle Islamic Geometric Mesh Background */}
       <div className="absolute inset-0 islamic-pattern-bg opacity-15 pointer-events-none" />

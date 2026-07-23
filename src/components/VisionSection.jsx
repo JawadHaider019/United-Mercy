@@ -87,7 +87,7 @@ export const VisionSection = ({ onOpenJoinModal }) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl bg-[#5EC4F1]/20 border-2 border-[#5EC4F1] p-4 sm:p-6 shadow-xl relative overflow-hidden flex flex-col justify-between space-y-6 text-slate-800"
+            className="rounded-3xl bg-sky-100 border-2 border-[#5EC4F1] p-4 sm:p-6 shadow-xl relative overflow-hidden flex flex-col justify-between space-y-6 text-slate-800"
           >
             {/* Header Badge */}
             <div className="flex items-center justify-between">
@@ -402,7 +402,7 @@ export const VisionSection = ({ onOpenJoinModal }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="max-w-5xl mx-auto rounded-3xl bg-[#5EC4F1]/20  border-2 border-[#5EC4F1]/50 p-8 sm:p-10 shadow-xl text-center space-y-4"
+          className="max-w-5xl mx-auto rounded-3xl bg-sky-100  border-2 border-[#5EC4F1]/50 p-8 sm:p-10 shadow-xl text-center space-y-4"
         >
           <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#1D273E] max-w-3xl mx-auto leading-snug">
             "We do not demand uniformity; we build unity."

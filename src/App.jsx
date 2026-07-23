@@ -57,8 +57,7 @@ export default function App() {
           onOpenJoinModal={handleOpenJoinModal}
         />
 
-        {/* Trusted Partners Logo Cloud */}
-        <TrustedPartners />
+
 
         {/* Faith Guided Quranic Values */}
         <FaithValues />
@@ -85,7 +84,8 @@ export default function App() {
 
         {/* Frequently Asked Questions */}
         <FAQSection />
-
+        {/* Trusted Partners Logo Cloud */}
+        <TrustedPartners />
         {/* Large CTA Section */}
         <CTASection
           onOpenJoinModal={handleOpenJoinModal}

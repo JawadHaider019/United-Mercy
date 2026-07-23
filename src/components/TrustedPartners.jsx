@@ -4,7 +4,7 @@ import { ShieldCheck, Award } from 'lucide-react';
 
 export const TrustedPartners = () => {
   return (
-    <section className="py-10 bg-slate-50 border-y border-slate-200/80 overflow-hidden relative">
+    <section className="py-10 bg-sky-100 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 lg:gap-8">
 
@@ -25,8 +25,8 @@ export const TrustedPartners = () => {
           {/* Right Slider Section - 70% Width */}
           <div className="w-full md:w-[70%] overflow-hidden relative py-2">
             {/* Fade Gradients at Edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-4 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-sky-100 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-4 bg-gradient-to-l from-sky-100 to-transparent z-10 pointer-events-none" />
 
             {/* Ticker / Scrolling Container */}
             <div className="flex w-full overflow-hidden">

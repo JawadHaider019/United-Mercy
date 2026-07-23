@@ -230,7 +230,7 @@ Email: alrayyancharityorg@gmail.com`,
     : CAMPAIGN_ITEMS.filter(c => c.category === selectedCategory);
 
   return (
-    <section id="campaigns" className="py-20 sm:py-24 relative overflow-hidden bg-[#5EC4F1]/30 border-y border-[#0284C7]/15">
+    <section id="campaigns" className="py-16 relative overflow-hidden bg-sky-100 border-y border-[#0284C7]/15">
       {/* Subtle Islamic Geometric Mesh Background */}
       <div className="absolute inset-0 islamic-pattern-bg opacity-15 pointer-events-none" />
 
@@ -266,8 +266,8 @@ Email: alrayyancharityorg@gmail.com`,
               key={cat}
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 rounded-full text-xs font-semibold transition-all whitespace-nowrap flex items-center gap-1.5 cursor-pointer ${selectedCategory === cat
-                  ? 'bg-[#0284C7] text-white shadow-md shadow-[#0284C7]/20 font-bold scale-105'
-                  : 'bg-white text-slate-700 hover:text-[#151E32] hover:bg-slate-100 border border-slate-200'
+                ? 'bg-[#0284C7] text-white shadow-md shadow-[#0284C7]/20 font-bold scale-105'
+                : 'bg-white text-slate-700 hover:text-[#151E32] hover:bg-slate-100 border border-slate-200'
                 }`}
             >
               {cat}
