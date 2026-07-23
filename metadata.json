@@ -1,0 +1,6 @@
+{
+  "name": "United Mercy",
+  "description": "Global Islamic Collaboration & Humanitarian Platform connecting organizations, donors, businesses, and volunteers worldwide.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
