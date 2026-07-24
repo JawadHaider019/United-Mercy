@@ -288,6 +288,8 @@ export const FaithValues = () => {
                   const angleRad = ((idx * 72 - 90) * Math.PI) / 180;
                   const nx = cx + radius * Math.cos(angleRad);
                   const ny = cy + radius * Math.sin(angleRad);
+                  const isSelected = activeStakeholder === idx;
+                  const titleWords = s.title.split(' ');
 
                   return (
                     <g key={`orb-node-${s.id}`}>
@@ -300,7 +302,7 @@ export const FaithValues = () => {
                         stroke={s.color}
                         strokeWidth="2.5"
                         strokeDasharray="4 6"
-                        strokeOpacity={activeStakeholder === idx ? 0.95 : 0.6}
+                        strokeOpacity={isSelected ? 0.95 : 0.6}
                         className="transition-all duration-300"
                       />
 
@@ -314,32 +316,81 @@ export const FaithValues = () => {
                             duration: 38,
                             ease: "linear"
                           }}
-                          style={{ transformOrigin: 'center center', transformBox: 'fill-box' }}
                         >
-                          <foreignObject x="-58" y="-58" width="116" height="116">
-                            <div
-                              xmlns="http://www.w3.org/1999/xhtml"
-                              style={{ width: '100%', height: '100%' }}
-                              onMouseEnter={() => setActiveStakeholder(idx)}
-                              onClick={() => setActiveStakeholder(idx)}
-                              className={`w-full h-full rounded-full flex flex-col items-center justify-center p-2 text-center border-2 transition-colors duration-300 shadow-md backdrop-blur-md ${activeStakeholder === idx
-                                ? `${s.bgLight} ${s.borderLight} shadow-lg`
-                                : 'bg-white border-slate-200'
-                                }`}
+                          {/* Outer Badge Circle */}
+                          <circle
+                            cx="0"
+                            cy="0"
+                            r="48"
+                            fill={isSelected ? '#FFFFFF' : '#FFFFFF'}
+                            stroke={isSelected ? s.color : '#CBD5E1'}
+                            strokeWidth={isSelected ? 3 : 1.5}
+                            filter="url(#orbital-glow)"
+                            className="cursor-pointer transition-all duration-300"
+                            onMouseEnter={() => setActiveStakeholder(idx)}
+                            onClick={() => setActiveStakeholder(idx)}
+                          />
+
+                          {/* Outer Badge Surface */}
+                          <circle
+                            cx="0"
+                            cy="0"
+                            r="48"
+                            fill={isSelected ? (s.id === 'donors' ? '#F3E8FF' : s.id === 'orgs' ? '#DCFCE7' : s.id === 'business' ? '#FEF9C3' : s.id === 'volunteers' ? '#DBEAFE' : '#FFE4E6') : '#FFFFFF'}
+                            stroke={isSelected ? s.color : '#E2E8F0'}
+                            strokeWidth={isSelected ? 2.5 : 1.5}
+                            className="cursor-pointer transition-all duration-300"
+                            onMouseEnter={() => setActiveStakeholder(idx)}
+                            onClick={() => setActiveStakeholder(idx)}
+                          />
+
+                          {/* Icon Circle Container */}
+                          <circle
+                            cx="0"
+                            cy="-14"
+                            r="14"
+                            fill={`${s.color}20`}
+                            className="pointer-events-none"
+                          />
+
+                          {/* Lucide Icon Container */}
+                          <g
+                            transform="translate(-8, -22)"
+                            style={{ color: s.color }}
+                            className="pointer-events-none"
+                          >
+                            <s.icon width="16" height="16" />
+                          </g>
+
+                          {/* Stakeholder Title Label */}
+                          {titleWords.length > 1 ? (
+                            <text
+                              x="0"
+                              y="11"
+                              textAnchor="middle"
+                              dominantBaseline="central"
+                              fill="#1E293B"
+                              fontSize="9.5"
+                              fontWeight="800"
+                              className="font-sans-clean pointer-events-none"
                             >
-                              <div className="flex flex-col items-center justify-center text-center">
-                                <div
-                                  className="p-1.5 sm:p-2 rounded-full shrink-0 mb-0.5"
-                                  style={{ backgroundColor: `${s.color}15`, color: s.color }}
-                                >
-                                  {s.icon}
-                                </div>
-                                <span className="text-[9px] sm:text-[11px] font-extrabold text-slate-800 font-sans-clean leading-tight text-center px-1 max-w-[95px]">
-                                  {s.title}
-                                </span>
-                              </div>
-                            </div>
-                          </foreignObject>
+                              <tspan x="0" dy="-4">{titleWords[0]}</tspan>
+                              <tspan x="0" dy="10.5">{titleWords[1]}</tspan>
+                            </text>
+                          ) : (
+                            <text
+                              x="0"
+                              y="13"
+                              textAnchor="middle"
+                              dominantBaseline="central"
+                              fill="#1E293B"
+                              fontSize="10"
+                              fontWeight="800"
+                              className="font-sans-clean pointer-events-none"
+                            >
+                              {s.title}
+                            </text>
+                          )}
                         </motion.g>
                       </g>
                     </g>
