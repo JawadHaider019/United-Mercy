@@ -353,13 +353,18 @@ export const FaithValues = () => {
                             className="pointer-events-none"
                           />
 
-                          {/* Lucide Icon Container */}
+                          {/* Icon Container */}
                           <g
-                            transform="translate(-8, -22)"
                             style={{ color: s.color }}
                             className="pointer-events-none"
                           >
-                            <s.icon width="16" height="16" />
+                            {React.cloneElement(s.icon, {
+                              x: "-10",
+                              y: "-24",
+                              width: "20",
+                              height: "20",
+                              className: ""
+                            })}
                           </g>
 
                           {/* Stakeholder Title Label */}
