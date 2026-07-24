@@ -239,11 +239,11 @@ export const FaithValues = () => {
           </div>
 
           {/* SVG Diagram Stage */}
-          <div className="relative w-full max-w-[650px] aspect-square mx-auto flex items-center justify-center select-none overflow-visible">
+          <div className="relative w-full max-w-[650px] aspect-square mx-auto select-none overflow-visible">
             <svg
               viewBox="60 60 580 580"
               preserveAspectRatio="xMidYMid meet"
-              className="w-full h-full overflow-visible"
+              className="absolute inset-0 w-full h-full overflow-visible"
             >
               <defs>
                 {/* Glow Filters */}
@@ -281,7 +281,7 @@ export const FaithValues = () => {
                   duration: 38,
                   ease: "linear"
                 }}
-                style={{ transformOrigin: `${cx}px ${cy}px` }}
+                style={{ transformOrigin: `${cx}px ${cy}px`, transformBox: 'fill-box' }}
               >
                 {/* Energy Pulses Inward along Orbit */}
                 {STAKEHOLDERS.map((s, idx) => {
@@ -314,10 +314,12 @@ export const FaithValues = () => {
                             duration: 38,
                             ease: "linear"
                           }}
-                          style={{ transformOrigin: '0px 0px' }}
+                          style={{ transformOrigin: 'center center', transformBox: 'fill-box' }}
                         >
                           <foreignObject x="-58" y="-58" width="116" height="116">
                             <div
+                              xmlns="http://www.w3.org/1999/xhtml"
+                              style={{ width: '100%', height: '100%' }}
                               onMouseEnter={() => setActiveStakeholder(idx)}
                               onClick={() => setActiveStakeholder(idx)}
                               className={`w-full h-full rounded-full flex flex-col items-center justify-center p-2 text-center border-2 transition-colors duration-300 shadow-md backdrop-blur-md ${activeStakeholder === idx
@@ -360,12 +362,14 @@ export const FaithValues = () => {
                   strokeDasharray="4 6"
                   animate={{ rotate: -360 }}
                   transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-                  style={{ transformOrigin: `${cx}px ${cy}px` }}
+                  style={{ transformOrigin: `${cx}px ${cy}px`, transformBox: 'fill-box' }}
                 />
 
                 {/* Core ForeignObject Card */}
                 <foreignObject x={cx - 95} y={cy - 95} width="190" height="190">
                   <div
+                    xmlns="http://www.w3.org/1999/xhtml"
+                    style={{ width: '100%', height: '100%' }}
                     onMouseEnter={() => setActiveStakeholder(null)}
                     className="w-full h-full rounded-full bg-white border-2 border-[#38BDF8] flex flex-col items-center justify-center p-3 sm:p-4 text-center space-y-1  transition-transform duration-300 "
                   >

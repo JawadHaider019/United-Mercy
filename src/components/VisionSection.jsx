@@ -115,7 +115,7 @@ export const VisionSection = ({ onOpenJoinModal }) => {
 
               {/* SVG Canvas (Taller aspect ratio for 4 distinct rows) */}
               <div className="relative w-full aspect-[500/295] select-none">
-                <svg viewBox="0 0 500 295" className="w-full h-full overflow-visible">
+                <svg viewBox="0 0 500 295" className="absolute inset-0 w-full h-full overflow-visible">
                   <defs>
                     <linearGradient id="arrowGlow" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#5EC4F1" stopOpacity="0.2" />
@@ -166,6 +166,7 @@ export const VisionSection = ({ onOpenJoinModal }) => {
                             duration: 1.8 + idx * 0.3,
                             ease: "linear"
                           }}
+                          style={{ transformBox: 'fill-box', transformOrigin: 'center' }}
                         />
 
                         {/* Arrow Tip */}
@@ -299,7 +300,7 @@ export const VisionSection = ({ onOpenJoinModal }) => {
 
               {/* SVG Canvas (Matching 500/295 Aspect Ratio) */}
               <div className="relative w-full aspect-[500/295] select-none">
-                <svg viewBox="0 0 500 295" className="w-full h-full overflow-visible">
+                <svg viewBox="0 0 500 295" className="absolute inset-0 w-full h-full overflow-visible">
                   {/* Grid Lines */}
                   <line x1="10" y1="45" x2="490" y2="45" stroke="rgba(255,255,255,0.08)" strokeDasharray="4 4" />
                   <line x1="10" y1="115" x2="490" y2="115" stroke="rgba(255,255,255,0.08)" strokeDasharray="4 4" />

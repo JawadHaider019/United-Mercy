@@ -88,12 +88,12 @@ export const MovementSection = ({ onOpenJoinModal }) => {
 
             {/* MOBILE VIEW (<640px) */}
             <div className="block sm:hidden relative w-full select-none">
-              <div className="relative w-full aspect-[360/450] flex items-center justify-center">
+              <div className="relative w-full aspect-[360/450]">
 
                 <svg
                   viewBox="0 0 360 450"
                   preserveAspectRatio="xMidYMid meet"
-                  className="w-full h-full overflow-visible"
+                  className="absolute inset-0 w-full h-full overflow-visible"
                 >
                   <defs>
                     <linearGradient id="grad-orgA-mob" x1="0%" y1="100%" x2="0%" y2="0%">
@@ -125,7 +125,7 @@ export const MovementSection = ({ onOpenJoinModal }) => {
                       <stop offset="100%" stopColor="#D4AF37" />
                     </linearGradient>
 
-                    <filter id="glow-mob" x="-20%" y="-20%" width="140%" height="140%">
+                    <filter id="glow-mob" x="-50%" y="-50%" width="200%" height="200%">
                       <feGaussianBlur stdDeviation="4" result="blur" />
                       <feComposite in="SourceGraphic" in2="blur" operator="over" />
                     </filter>
@@ -267,6 +267,7 @@ export const MovementSection = ({ onOpenJoinModal }) => {
                       strokeDasharray="5 5"
                       animate={{ rotate: 360 }}
                       transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                      style={{ transformBox: 'fill-box', transformOrigin: 'center' }}
                     />
                     <motion.circle
                       cx="0"
@@ -277,6 +278,7 @@ export const MovementSection = ({ onOpenJoinModal }) => {
                       strokeWidth="1.5"
                       animate={{ scale: [1, 1.2, 1], opacity: [0.7, 0.2, 0.7] }}
                       transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                      style={{ transformBox: 'fill-box', transformOrigin: 'center' }}
                     />
                     <circle
                       cx="0"
@@ -303,12 +305,12 @@ export const MovementSection = ({ onOpenJoinModal }) => {
 
             {/* DESKTOP / TABLET VIEW (>=640px) */}
             <div className="hidden sm:block relative w-full select-none">
-              <div className="relative w-full aspect-[900/400] flex items-center justify-center">
+              <div className="relative w-full aspect-[900/400]">
 
                 <svg
                   viewBox="0 0 900 400"
                   preserveAspectRatio="xMidYMid meet"
-                  className="w-full h-full overflow-visible"
+                  className="absolute inset-0 w-full h-full overflow-visible"
                 >
                   <defs>
                     <linearGradient id="grad-orgA" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -340,7 +342,7 @@ export const MovementSection = ({ onOpenJoinModal }) => {
                       <stop offset="100%" stopColor="#D4AF37" />
                     </linearGradient>
 
-                    <filter id="glow-filter" x="-20%" y="-20%" width="140%" height="140%">
+                    <filter id="glow-filter" x="-50%" y="-50%" width="200%" height="200%">
                       <feGaussianBlur stdDeviation="5" result="blur" />
                       <feComposite in="SourceGraphic" in2="blur" operator="over" />
                     </filter>
@@ -447,6 +449,7 @@ export const MovementSection = ({ onOpenJoinModal }) => {
                       strokeDasharray="6 6"
                       animate={{ rotate: 360 }}
                       transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                      style={{ transformBox: 'fill-box', transformOrigin: 'center' }}
                     />
                     <motion.circle
                       cx="0"
@@ -457,6 +460,7 @@ export const MovementSection = ({ onOpenJoinModal }) => {
                       strokeWidth="1.8"
                       animate={{ scale: [1, 1.2, 1], opacity: [0.7, 0.2, 0.7] }}
                       transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                      style={{ transformBox: 'fill-box', transformOrigin: 'center' }}
                     />
                     <circle
                       cx="0"
