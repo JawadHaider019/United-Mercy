@@ -34,24 +34,23 @@ export const Hero = ({ onOpenJoinModal, onOpenDonateModal }) => {
 
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 relative z-10 w-full">
 
-        {/* Left Content Column (Matching Image 1 Composition) */}
-        <div className="lg:col-span-7 text-left flex flex-col justify-between space-y-10 max-w-xl">
+        {/* Centered Content Container */}
+        <div className="text-center flex flex-col items-center justify-center space-y-8 max-w-3xl mx-auto">
 
-          {/* Upper Section: Arabic Calligraphy & Intro Paragraph */}
-          <div className="space-y-4 max-w-xl">
+          {/* Upper Section: Headline */}
+          <div className="space-y-4 max-w-3xl mx-auto">
             <motion.h1
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="font-sans-clean text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-[1.15] max-w-2xl"
+              className="font-sans-clean text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-[1.15]"
             >
               The Global Online Collaboration Platform for the Muslim World
             </motion.h1>
-
           </div>
 
-          {/* Lower Section: Massive Headline & Pill CTA Button */}
-          <div className="space-y-6 ">
+          {/* Lower Section: Intro Paragraph & Pill CTA Button */}
+          <div className="space-y-6 flex flex-col items-center max-w-2xl mx-auto">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -64,6 +63,7 @@ export const Hero = ({ onOpenJoinModal, onOpenDonateModal }) => {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
+              className="flex justify-center"
             >
               <button
                 id="hero-join-now-btn"

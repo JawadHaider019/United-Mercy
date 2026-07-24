@@ -40,7 +40,8 @@ export const MovementSection = ({ onOpenJoinModal }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
           {/* Left Column: Text (Headline, Copy & Join Now CTA) */}
-          <div className="lg:col-span-5 text-left space-y-4 sm:space-y-6">
+          <div className="lg:col-span-5 text-left space-y-4 ">
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -48,12 +49,19 @@ export const MovementSection = ({ onOpenJoinModal }) => {
               transition={{ duration: 0.6 }}
               className="font-serif-luxury text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#151E32] tracking-tight leading-snug lg:leading-tight"
             >
-              United Mercy is more than just a platform;{' '}
-              <span className="bg-gradient-to-r from-[#0284C7] via-[#38BDF8] to-[#0284C7] bg-clip-text text-transparent">
-                it’s a movement to channelise collective, coordinated efforts toward a shared goal for maximum impact.
-              </span>
+              <span className='text-[#5EC4F1]'>United Mercy</span> is more than just a platform.
+
             </motion.h2>
 
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-sm sm:text-base text-slate-600 font-sans-clean leading-relaxed font-normal"
+            >
+              It’s a movement to channelise collective, coordinated efforts toward a shared goal for maximum impact.
+            </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
