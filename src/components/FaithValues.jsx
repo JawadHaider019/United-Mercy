@@ -239,11 +239,11 @@ export const FaithValues = () => {
           </div>
 
           {/* SVG Diagram Stage */}
-          <div className="relative w-full max-w-[650px] aspect-square mx-auto select-none overflow-visible">
+          <div className="w-full max-w-[650px] mx-auto select-none">
             <svg
               viewBox="60 60 580 580"
               preserveAspectRatio="xMidYMid meet"
-              className="absolute inset-0 w-full h-full overflow-visible"
+              className="w-full h-auto block overflow-visible"
             >
               <defs>
                 {/* Glow Filters */}

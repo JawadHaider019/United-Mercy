@@ -87,13 +87,13 @@ export const MovementSection = ({ onOpenJoinModal }) => {
           <div className="lg:col-span-7 w-full">
 
             {/* MOBILE VIEW (<640px) */}
-            <div className="block sm:hidden relative w-full select-none">
-              <div className="relative w-full aspect-[360/450]">
+            <div className="block sm:hidden w-full select-none">
+              <div className="relative w-full">
 
                 <svg
                   viewBox="0 0 360 450"
                   preserveAspectRatio="xMidYMid meet"
-                  className="absolute inset-0 w-full h-full overflow-visible"
+                  className="w-full h-auto block overflow-visible"
                 >
                   <defs>
                     <linearGradient id="grad-orgA-mob" x1="0%" y1="100%" x2="0%" y2="0%">
@@ -183,8 +183,9 @@ export const MovementSection = ({ onOpenJoinModal }) => {
                     />
                     <text
                       x="0"
-                      y="5"
+                      y="1"
                       textAnchor="middle"
+                      dominantBaseline="central"
                       fill="#FFFFFF"
                       fontSize="11"
                       fontWeight="bold"
@@ -243,8 +244,9 @@ export const MovementSection = ({ onOpenJoinModal }) => {
                       <circle cx="-16" cy="0" r="3.5" fill={org.color} />
                       <text
                         x="5"
-                        y="3.5"
+                        y="1"
                         textAnchor="middle"
+                        dominantBaseline="central"
                         fill="#1E293B"
                         fontSize="9.5"
                         fontWeight="bold"
@@ -304,13 +306,13 @@ export const MovementSection = ({ onOpenJoinModal }) => {
             </div>
 
             {/* DESKTOP / TABLET VIEW (>=640px) */}
-            <div className="hidden sm:block relative w-full select-none">
-              <div className="relative w-full aspect-[900/400]">
+            <div className="hidden sm:block w-full select-none">
+              <div className="relative w-full">
 
                 <svg
                   viewBox="0 0 900 400"
                   preserveAspectRatio="xMidYMid meet"
-                  className="absolute inset-0 w-full h-full overflow-visible"
+                  className="w-full h-auto block overflow-visible"
                 >
                   <defs>
                     <linearGradient id="grad-orgA" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -425,8 +427,9 @@ export const MovementSection = ({ onOpenJoinModal }) => {
                       <circle cx="-30" cy="0" r="6" fill={org.color} />
                       <text
                         x="8"
-                        y="5"
+                        y="1"
                         textAnchor="middle"
+                        dominantBaseline="central"
                         fill="#1E293B"
                         fontSize="13"
                         fontWeight="bold"
@@ -497,8 +500,9 @@ export const MovementSection = ({ onOpenJoinModal }) => {
                     />
                     <text
                       x="0"
-                      y="6"
+                      y="1"
                       textAnchor="middle"
+                      dominantBaseline="central"
                       fill="#FFFFFF"
                       fontSize="13"
                       fontWeight="bold"
