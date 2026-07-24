@@ -406,7 +406,10 @@ export const FaithValues = () => {
               {/* =================================================================== */}
               {/* CENTRAL CORE ("Unified Ummah")                                      */}
               {/* =================================================================== */}
-              <g className="cursor-pointer select-none">
+              <g
+                className="cursor-pointer select-none"
+                onMouseEnter={() => setActiveStakeholder(null)}
+              >
                 {/* Glowing Core Orbit Rings */}
                 <motion.circle
                   cx={cx}
@@ -421,28 +424,54 @@ export const FaithValues = () => {
                   style={{ transformOrigin: `${cx}px ${cy}px`, transformBox: 'fill-box' }}
                 />
 
-                {/* Core ForeignObject Card */}
-                <foreignObject x={cx - 95} y={cy - 95} width="190" height="190">
-                  <div
-                    xmlns="http://www.w3.org/1999/xhtml"
-                    style={{ width: '100%', height: '100%' }}
-                    onMouseEnter={() => setActiveStakeholder(null)}
-                    className="w-full h-full rounded-full bg-white border-2 border-[#38BDF8] flex flex-col items-center justify-center p-3 sm:p-4 text-center space-y-1  transition-transform duration-300 "
-                  >
-                    <div className="relative flex items-center justify-center w-full">
-                      <img src={Icon} alt="United Mercy" className="w-16 h-16 mx-auto shrink-0 object-contain" />
-                    </div>
+                {/* Main Center White Circle */}
+                <circle
+                  cx={cx}
+                  cy={cy}
+                  r="80"
+                  fill="#FFFFFF"
+                  stroke="#38BDF8"
+                  strokeWidth="3"
+                  filter="url(#core-glow)"
+                />
 
-                    <div>
-                      <h4 className="text-xs sm:text-base md:text-lg font-extrabold text-[#1D273E] tracking-wide font-serif-luxury">
-                        Unified Ummah
-                      </h4>
-                      <p className="text-[10px] sm:text-[11px] text-[#38BDF8] font-semibold font-sans-clean">
-                        One Body in Mercy
-                      </p>
-                    </div>
-                  </div>
-                </foreignObject>
+                {/* United Mercy Puzzle Icon Image */}
+                <image
+                  href={Icon}
+                  x={cx - 28}
+                  y={cy - 50}
+                  width="56"
+                  height="56"
+                  preserveAspectRatio="xMidYMid meet"
+                />
+
+                {/* Core Title */}
+                <text
+                  x={cx}
+                  y={cy + 18}
+                  textAnchor="middle"
+                  dominantBaseline="central"
+                  fill="#1D273E"
+                  fontSize="16"
+                  fontWeight="800"
+                  className="font-serif-luxury tracking-wide"
+                >
+                  Unified Ummah
+                </text>
+
+                {/* Core Subtitle */}
+                <text
+                  x={cx}
+                  y={cy + 36}
+                  textAnchor="middle"
+                  dominantBaseline="central"
+                  fill="#38BDF8"
+                  fontSize="11"
+                  fontWeight="700"
+                  className="font-sans-clean"
+                >
+                  One Body in Mercy
+                </text>
               </g>
 
             </svg>
