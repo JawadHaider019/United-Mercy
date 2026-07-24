@@ -1,12 +1,11 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef, useEffect } from 'react';
 import { SectionTitle } from './SectionTitle';
-import { 
-  Users, 
-  Tag, 
-  UserCheck, 
-  Radio, 
-  Sparkles, 
+import {
+  Users,
+  Tag,
+  UserCheck,
+  Radio,
+  Sparkles,
   Coins,
   ArrowRight
 } from 'lucide-react';
@@ -21,7 +20,6 @@ export const FeaturesSection = ({ onOpenJoinModal }) => {
       badge: 'Organizations',
       color: '#22C55E',
       bgLight: 'bg-[#22C55E]/10',
-      borderHover: 'hover:border-[#22C55E]',
       textClass: 'text-[#22C55E]',
       badgeStyle: 'bg-[#22C55E]/15 text-[#22C55E] border-[#22C55E]/30',
     },
@@ -33,7 +31,6 @@ export const FeaturesSection = ({ onOpenJoinModal }) => {
       badge: 'Businesses',
       color: '#EAB308',
       bgLight: 'bg-[#EAB308]/10',
-      borderHover: 'hover:border-[#EAB308]',
       textClass: 'text-[#EAB308]',
       badgeStyle: 'bg-[#EAB308]/15 text-[#D97706] border-[#EAB308]/30',
     },
@@ -45,7 +42,6 @@ export const FeaturesSection = ({ onOpenJoinModal }) => {
       badge: 'Volunteers',
       color: '#3B82F6',
       bgLight: 'bg-[#3B82F6]/10',
-      borderHover: 'hover:border-[#3B82F6]',
       textClass: 'text-[#3B82F6]',
       badgeStyle: 'bg-[#3B82F6]/15 text-[#3B82F6] border-[#3B82F6]/30',
     },
@@ -57,7 +53,6 @@ export const FeaturesSection = ({ onOpenJoinModal }) => {
       badge: 'Community',
       color: '#0284C7',
       bgLight: 'bg-[#0284C7]/10',
-      borderHover: 'hover:border-[#0284C7]',
       textClass: 'text-[#0284C7]',
       badgeStyle: 'bg-[#0284C7]/15 text-[#0284C7] border-[#0284C7]/30',
     },
@@ -69,7 +64,6 @@ export const FeaturesSection = ({ onOpenJoinModal }) => {
       badge: 'Campaigns',
       color: '#A855F7',
       bgLight: 'bg-[#A855F7]/10',
-      borderHover: 'hover:border-[#A855F7]',
       textClass: 'text-[#A855F7]',
       badgeStyle: 'bg-[#A855F7]/15 text-[#A855F7] border-[#A855F7]/30',
     },
@@ -81,42 +75,139 @@ export const FeaturesSection = ({ onOpenJoinModal }) => {
       badge: 'Donations',
       color: '#EF4444',
       bgLight: 'bg-[#EF4444]/10',
-      borderHover: 'hover:border-[#EF4444]',
       textClass: 'text-[#EF4444]',
       badgeStyle: 'bg-[#EF4444]/15 text-[#EF4444] border-[#EF4444]/30',
     },
   ];
 
+  // Tripled array so wrapping forward/backward is seamlessly smooth
+  const SLIDER_FEATURES = [...KEY_FEATURES, ...KEY_FEATURES, ...KEY_FEATURES];
+
+  const trackRef = useRef(null);
+  const [isMouseDown, setIsMouseDown] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const startXRef = useRef(0);
+  const scrollLeftRef = useRef(0);
+  const isDraggingRef = useRef(false);
+
+  // Auto-scroll loop using requestAnimationFrame for ultra-smooth 60fps movement
+  useEffect(() => {
+    let animationFrameId;
+    const speed = 0.8; // px per frame
+
+    const autoScroll = () => {
+      if (trackRef.current && !isMouseDown && !isHovered) {
+        trackRef.current.scrollLeft += speed;
+
+        const maxScroll = trackRef.current.scrollWidth / 3;
+        if (trackRef.current.scrollLeft >= maxScroll * 2) {
+          trackRef.current.scrollLeft -= maxScroll;
+        } else if (trackRef.current.scrollLeft <= 0) {
+          trackRef.current.scrollLeft += maxScroll;
+        }
+      }
+      animationFrameId = requestAnimationFrame(autoScroll);
+    };
+
+    animationFrameId = requestAnimationFrame(autoScroll);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isMouseDown, isHovered]);
+
+  // Initial scroll positioning to center set
+  useEffect(() => {
+    if (trackRef.current) {
+      const singleSetWidth = trackRef.current.scrollWidth / 3;
+      trackRef.current.scrollLeft = singleSetWidth;
+    }
+  }, []);
+
+  const handleMouseDown = (e) => {
+    setIsMouseDown(true);
+    isDraggingRef.current = false;
+    startXRef.current = e.pageX - trackRef.current.offsetLeft;
+    scrollLeftRef.current = trackRef.current.scrollLeft;
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isMouseDown) return;
+    const x = e.pageX - trackRef.current.offsetLeft;
+    const walk = (x - startXRef.current) * 1.5;
+    if (Math.abs(walk) > 5) {
+      isDraggingRef.current = true;
+    }
+    trackRef.current.scrollLeft = scrollLeftRef.current - walk;
+
+    // Boundary wrapping while dragging
+    const singleSetWidth = trackRef.current.scrollWidth / 3;
+    if (trackRef.current.scrollLeft >= singleSetWidth * 2) {
+      trackRef.current.scrollLeft -= singleSetWidth;
+      startXRef.current = x;
+      scrollLeftRef.current = trackRef.current.scrollLeft;
+    } else if (trackRef.current.scrollLeft <= 0) {
+      trackRef.current.scrollLeft += singleSetWidth;
+      startXRef.current = x;
+      scrollLeftRef.current = trackRef.current.scrollLeft;
+    }
+  };
+
+  const handleMouseUpOrLeave = () => {
+    setIsMouseDown(false);
+  };
+
+  const handleCardClick = (featureTitle) => {
+    if (isDraggingRef.current) return;
+    if (onOpenJoinModal) {
+      onOpenJoinModal(featureTitle);
+    }
+  };
+
   return (
-    <section id="key-features" className="py-20 sm:py-24 relative overflow-hidden bg-slate-50/80 border-t border-b border-slate-200">
-      
+    <section id="key-features" className="py-16 relative overflow-hidden bg-slate-50/80 border-t border-b border-slate-200">
+
       {/* Background Radial Glow */}
       <div className="absolute top-1/3 left-10 w-[500px] h-[500px] bg-[#5EC4F1]/10 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#0284C7]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
-        
+
         {/* Section Header */}
-        <SectionTitle 
+        <SectionTitle
           badge="Platform Capabilities"
           title="Key Features of United Mercy"
           subtitle="Connecting organizations, donors, businesses, volunteers, and the global Ummah through unified digital infrastructure."
         />
 
-        {/* 6 Key Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {KEY_FEATURES.map((feature, index) => {
+      </div>
+
+      {/* Endless Draggable Loop Slider Container */}
+      <div className="relative z-10 mt-4 overflow-hidden w-full ">
+        {/* Subtle Fade Overlays at Edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-r from-slate-50/90 via-slate-50/50 to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-32 bg-gradient-to-l from-slate-50/90 via-slate-50/50 to-transparent z-20 pointer-events-none" />
+
+        {/* Draggable Track */}
+        <div
+          ref={trackRef}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUpOrLeave}
+          onMouseLeave={() => {
+            handleMouseUpOrLeave();
+            setIsHovered(false);
+          }}
+          onMouseEnter={() => setIsHovered(true)}
+          className={`flex gap-6 py-4 sm:gap-8 px-4 sm:px-6 overflow-x-auto scrollbar-none select-none ${isMouseDown ? 'cursor-grabbing' : 'cursor-grab'
+            }`}
+          style={{ scrollBehavior: 'auto' }}
+        >
+          {SLIDER_FEATURES.map((feature, index) => {
             const FeatureIcon = feature.icon;
 
             return (
-              <motion.div
-                key={feature.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                onClick={() => onOpenJoinModal && onOpenJoinModal(feature.title)}
-                className={`p-6 sm:p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer ${feature.borderHover}`}
+              <div
+                key={`${feature.id}-${index}`}
+                onClick={() => handleCardClick(feature.title)}
+                className="w-[290px] sm:w-[350px] md:w-[380px] shrink-0 p-6 sm:p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group cursor-pointer"
               >
                 <div>
                   {/* Icon & Category Badge */}
@@ -143,11 +234,10 @@ export const FeaturesSection = ({ onOpenJoinModal }) => {
                   <span>Learn More</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
-
       </div>
     </section>
   );

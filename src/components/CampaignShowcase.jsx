@@ -10,6 +10,15 @@ import {
   ArrowRight
 } from 'lucide-react';
 
+import helpMuslimImg from '../../assets/Help Muslim.avif';
+import learningCenterImg from '../../assets/Learning Center.avif';
+import masjidConstructionImg from '../../assets/Masjid Construction.avif';
+import muslimEducationImg from '../../assets/Muslim Education.avif';
+import orphanCareImg from '../../assets/Orphan Care.avif';
+import supportOrphanImg from '../../assets/Support Orphan.avif';
+import waterWellImg from '../../assets/Water Well.avif';
+import writingMaterialsImg from '../../assets/Writing Materials.avif';
+
 export const CampaignShowcase = ({ onSelectCampaign, onSelectCampaignToDonate }) => {
   const handleSelect = onSelectCampaign || onSelectCampaignToDonate;
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -24,7 +33,7 @@ export const CampaignShowcase = ({ onSelectCampaign, onSelectCampaignToDonate })
       location: 'Lilongwe, Malawi',
       targetAmount: 50000,
       raisedAmount: 38500,
-      image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800&auto=format&fit=crop',
+      image: supportOrphanImg,
       daysLeft: 12,
       donorsCount: 420,
       fullDesc: `Help Support a Thriving Madrasah for Orphans in Malawi. Run by Imam Development Program in collaboration with An Nur Charity.
@@ -77,7 +86,7 @@ What We Have Achieved:
       location: 'Malawi',
       targetAmount: 25000,
       raisedAmount: 19800,
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop',
+      image: writingMaterialsImg,
       daysLeft: 8,
       donorsCount: 215,
       fullDesc: `Reaching out to learners sitting for this year's national exams with exam coaching sessions and distribution of writing materials.
@@ -95,7 +104,7 @@ Target Allocation of $500:
       location: 'Malawi',
       targetAmount: 30000,
       raisedAmount: 24500,
-      image: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800&auto=format&fit=crop',
+      image: muslimEducationImg,
       daysLeft: 15,
       donorsCount: 340,
       fullDesc: `Support New Muslims on Their Journey to Islam. We have new Muslims who recently took Shahada and are beginning their enrollment into our education programme covering:
@@ -119,7 +128,7 @@ Sponsorship Tiers:
       location: 'Yumbe District, Uganda',
       targetAmount: 75000,
       raisedAmount: 56200,
-      image: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?q=80&w=800&auto=format&fit=crop',
+      image: learningCenterImg,
       daysLeft: 20,
       donorsCount: 512,
       fullDesc: `We invite you to be part of a powerful initiative to uplift the youth and Muslim community of Yumbe District, Uganda. 
@@ -154,7 +163,7 @@ We do not necessarily need cash; PCs, laptops, and projectors can be donated dir
       location: 'Kushtia District, Bangladesh',
       targetAmount: 60000,
       raisedAmount: 48900,
-      image: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=800&auto=format&fit=crop',
+      image: orphanCareImg,
       daysLeft: 9,
       donorsCount: 610,
       fullDesc: `Providing safe shelter, nutritious meals, quality education, health services, and emotional support to over 100 orphaned children in Kushtia District.
@@ -172,7 +181,7 @@ What Your Support Can Do:
       location: 'Malawi',
       targetAmount: 35000,
       raisedAmount: 29400,
-      image: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=800&auto=format&fit=crop',
+      image: helpMuslimImg,
       daysLeft: 18,
       donorsCount: 390,
       fullDesc: `Hundreds embraced Islam in Malawi — now they need support to grow in faith. 🕌
@@ -189,7 +198,7 @@ Donate £50, £100, or £150 — your charity today strengthens a whole communit
       location: 'Uganda',
       targetAmount: 45000,
       raisedAmount: 41200,
-      image: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=800&auto=format&fit=crop',
+      image: waterWellImg,
       daysLeft: 5,
       donorsCount: 780,
       fullDesc: `Clean water is the foundation of life and health, yet for millions in Uganda, this essential need remains unmet. 
@@ -209,7 +218,7 @@ Email: alrayyancharityorg@gmail.com`,
       location: 'Uganda',
       targetAmount: 120000,
       raisedAmount: 98000,
-      image: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=800&auto=format&fit=crop',
+      image: masjidConstructionImg,
       daysLeft: 25,
       donorsCount: 890,
       fullDesc: `"The mosques of Allah shall be maintained only by those who believe in Allah and the Last Day..." [Surah At-Tawbah 9:18]
@@ -243,20 +252,38 @@ Email: alrayyancharityorg@gmail.com`,
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 mb-3 shadow-sm">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 mb-3 shadow-sm"
+            >
               <Sparkles className="w-4 h-4 text-[#0284C7]" />
               <span className="text-xs font-mono font-bold text-[#0284C7] uppercase tracking-wider">
                 Audited Field Initiatives
               </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-luxury font-bold text-[#151E32]">
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl sm:text-4xl md:text-5xl font-serif-luxury font-bold text-[#151E32]"
+            >
               Collaborative Campaigns <span className="text-[#0284C7]">in Action</span>
-            </h2>
+            </motion.h2>
           </div>
 
-          <p className="text-slate-600 text-sm sm:text-base max-w-md font-sans-clean font-normal">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-slate-600 text-sm sm:text-base max-w-md font-sans-clean font-normal"
+          >
             Every listed initiative is thoroughly vetted, monitored by ground logistics partners, and reports 100% direct capital transfers.
-          </p>
+          </motion.p>
         </div>
 
         {/* Category Filters */}

@@ -40,14 +40,6 @@ export const Hero = ({ onOpenJoinModal, onOpenDonateModal }) => {
 
             {/* Upper Section: Arabic Calligraphy & Intro Paragraph */}
             <div className="space-y-4 max-w-xl">
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="absolute top-10 right-2 font-arabic text-2xl sm:text-3xl text-[#5EC4F1] font-bold tracking-widest opacity-90"
-              >
-                بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-              </motion.div>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}

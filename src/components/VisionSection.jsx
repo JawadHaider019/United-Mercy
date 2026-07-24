@@ -188,7 +188,7 @@ export const VisionSection = ({ onOpenJoinModal }) => {
                           x={node.x - 15}
                           y={node.y + 34}
                           fill={isHovered ? '#0284C7' : '#334155'}
-                          fontSize="18"
+                          fontSize="16"
                           fontWeight={isHovered ? 'bold' : '600'}
                           className="font-sans-clean transition-colors"
                         >
@@ -337,7 +337,7 @@ export const VisionSection = ({ onOpenJoinModal }) => {
                         x={300}
                         y={item.y + 6}
                         fill="#CBD5E1"
-                        fontSize="18"
+                        fontSize="16"
                         fontWeight="600"
                         className="font-sans-clean"
                       >

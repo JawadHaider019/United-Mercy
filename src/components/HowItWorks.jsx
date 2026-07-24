@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { SectionTitle } from './SectionTitle';
 import {
   Users,
@@ -317,12 +318,16 @@ export const HowItWorks = ({ onOpenJoinModal }) => {
 
           {/* List of 5 Contributor Roles */}
           <div className="space-y-6">
-            {CONTENT_ITEMS.map((item) => {
+            {CONTENT_ITEMS.map((item, idx) => {
               const ItemIcon = item.icon;
 
               return (
-                <div
+                <motion.div
                   key={`content-item-${item.num}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
                   className="p-4 sm:p-5 rounded-2xl bg-[#151E32]/80 border border-slate-700/70 space-y-2.5 transition-all hover:border-slate-500/60"
                 >
                   <div className="flex items-center gap-3">
@@ -339,7 +344,7 @@ export const HowItWorks = ({ onOpenJoinModal }) => {
                   <p className="text-xs sm:text-sm text-gray-200 font-sans-clean leading-relaxed pl-10">
                     {item.desc}
                   </p>
-                </div>
+                </motion.div>
               );
             })}
           </div>

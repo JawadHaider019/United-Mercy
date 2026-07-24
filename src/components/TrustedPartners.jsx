@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { PARTNERS_DATA } from '../data/mockData';
 import { ShieldCheck, Award } from 'lucide-react';
 
@@ -10,16 +11,34 @@ export const TrustedPartners = () => {
 
           {/* Left Heading Section - 30% Width */}
           <div className="w-full md:w-[30%] shrink-0 text-center md:text-left flex flex-col items-center md:items-start">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0284C7]/10 text-[#0284C7] text-xs font-semibold uppercase tracking-wider mb-2">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0284C7]/10 text-[#0284C7] text-xs font-semibold uppercase tracking-wider mb-2"
+            >
               <ShieldCheck className="w-4 h-4" />
               <span>Verified Ecosystem</span>
-            </div>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-serif-luxury font-bold text-[#151E32]">
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-xl sm:text-2xl lg:text-3xl font-serif-luxury font-bold text-[#151E32]"
+            >
               Our Trusted Partners
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-1">
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-xs sm:text-sm text-slate-500 mt-1"
+            >
               Collaborating with global organizations to drive verified humanitarian impact worldwide.
-            </p>
+            </motion.p>
           </div>
 
           {/* Right Slider Section - 70% Width */}

@@ -49,18 +49,38 @@ export const WhyUnitedMercy = ({ onSelectFeature }) => {
         
         {/* Section Header */}
         <div className="text-center mb-12 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#151E32] border border-[#5EC4F1]/25">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#151E32] border border-[#5EC4F1]/25"
+          >
             <Sparkles className="w-4 h-4 text-[#5EC4F1]" />
             <span className="text-xs font-mono font-semibold text-[#5EC4F1] uppercase tracking-wider">
               Platform Core Capabilities
             </span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif-luxury font-bold text-white max-w-3xl mx-auto">
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-3xl sm:text-4xl md:text-5xl font-serif-luxury font-bold text-white max-w-3xl mx-auto"
+          >
             Engineered for <span className="text-sky-gradient">Maximum Global Impact</span>.
-          </h2>
-          <p className="text-gray-300 text-base max-w-2xl mx-auto font-sans-clean font-light">
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-gray-300 text-base max-w-2xl mx-auto font-sans-clean font-light"
+          >
             Every feature is purpose-built to reduce operational friction, verify humanitarian authenticity, and accelerate capital flow across borders.
-          </p>
+          </motion.p>
         </div>
 
         {/* Category Filter Tabs */}
