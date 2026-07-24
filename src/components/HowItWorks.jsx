@@ -182,8 +182,8 @@ export const HowItWorks = ({ onOpenJoinModal }) => {
               <foreignObject x="70" y="195" width="210" height="160" className="overflow-visible">
                 <div xmlns="http://www.w3.org/1999/xhtml" style={{ width: '100%', height: '100%' }} className="w-full h-full rounded-3xl bg-[#151E32] text-white border-4 border-[#5EC4F1] shadow-2xl flex flex-col items-center justify-center text-center p-4 relative">
                   <div className="absolute inset-0 rounded-3xl bg-[#5EC4F1]/20 animate-ping pointer-events-none opacity-50" />
-                  <div className="p-2 rounded-2xl mb-0 flex items-center justify-center">
-                    <img src={IconAsset} alt="United Mercy Icon" className="w-16 h-16 object-contain filter drop-shadow-[0_0_10px_rgba(94,196,241,0.8)]" />
+                  <div className="p-2 rounded-full bg-[#5EC4F1]/10 shadow-[0_0_20px_rgba(94,196,241,0.6)] mb-1 flex items-center justify-center">
+                    <img src={IconAsset} alt="United Mercy Icon" className="w-14 h-14 object-contain" />
                   </div>
                   <div className="font-serif-luxury font-extrabold text-sm sm:text-base leading-tight tracking-wide text-white">
                     United Mercy <br /> Platform
