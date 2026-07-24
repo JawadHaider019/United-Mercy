@@ -51,7 +51,8 @@ export default function App() {
           onOpenJoinModal={handleOpenJoinModal}
           onOpenDonateModal={() => handleOpenDonateModal(null)}
         />
-
+        {/* Trusted Partners Logo Cloud */}
+        <TrustedPartners />
         {/* Coordinated Movement & Interactive Arc Diagram Section */}
         <MovementSection
           onOpenJoinModal={handleOpenJoinModal}
@@ -84,8 +85,7 @@ export default function App() {
 
         {/* Frequently Asked Questions */}
         <FAQSection />
-        {/* Trusted Partners Logo Cloud */}
-        <TrustedPartners />
+
         {/* Large CTA Section */}
         <CTASection
           onOpenJoinModal={handleOpenJoinModal}

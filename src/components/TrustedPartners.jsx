@@ -5,22 +5,13 @@ import { ShieldCheck, Award } from 'lucide-react';
 
 export const TrustedPartners = () => {
   return (
-    <section className="py-10 bg-sky-100 overflow-hidden relative">
+    <section className="-mt-10 rounded-3xl py-10 bg-sky-100 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 lg:gap-8">
 
           {/* Left Heading Section - 30% Width */}
           <div className="w-full md:w-[30%] shrink-0 text-center md:text-left flex flex-col items-center md:items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0284C7]/10 text-[#0284C7] text-xs font-semibold uppercase tracking-wider mb-2"
-            >
-              <ShieldCheck className="w-4 h-4" />
-              <span>Verified Ecosystem</span>
-            </motion.div>
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

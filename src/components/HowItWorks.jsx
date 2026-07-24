@@ -95,11 +95,11 @@ export const HowItWorks = ({ onOpenJoinModal }) => {
                 {/* SVG VECTOR LINES & ANIMATED PULSE BALLS                               */}
                 {/* ===================================================================== */}
 
-                {/* Path 1: Card 1 (Islamic Orgs) -> Left Hub */}
+                {/* Path 1: Card 1 (Islamic Orgs) -> Right Hub */}
                 <line
-                  x1="220"
+                  x1="590"
                   y1="268"
-                  x2="480"
+                  x2="330"
                   y2="52.5"
                   stroke="#22C55E"
                   strokeWidth="3"
@@ -107,15 +107,15 @@ export const HowItWorks = ({ onOpenJoinModal }) => {
                   className="opacity-90"
                 />
                 <circle r="6" fill="#22C55E">
-                  <animate attributeName="cx" from="480" to="220" dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="cx" from="330" to="590" dur="2s" repeatCount="indefinite" />
                   <animate attributeName="cy" from="52.5" to="268" dur="2s" repeatCount="indefinite" />
                 </circle>
 
-                {/* Path 2: Card 2 (Donors) -> Left Hub */}
+                {/* Path 2: Card 2 (Donors) -> Right Hub */}
                 <line
-                  x1="220"
+                  x1="590"
                   y1="268"
-                  x2="480"
+                  x2="330"
                   y2="160.5"
                   stroke="#A855F7"
                   strokeWidth="3"
@@ -123,15 +123,15 @@ export const HowItWorks = ({ onOpenJoinModal }) => {
                   className="opacity-90"
                 />
                 <circle r="6" fill="#A855F7">
-                  <animate attributeName="cx" from="480" to="220" dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="cx" from="330" to="590" dur="2s" repeatCount="indefinite" />
                   <animate attributeName="cy" from="160.5" to="268" dur="2s" repeatCount="indefinite" />
                 </circle>
 
-                {/* Path 3: Card 3 (Business Owners) -> Left Hub */}
+                {/* Path 3: Card 3 (Business Owners) -> Right Hub */}
                 <line
-                  x1="220"
+                  x1="590"
                   y1="268"
-                  x2="480"
+                  x2="330"
                   y2="268.5"
                   stroke="#EAB308"
                   strokeWidth="3"
@@ -139,15 +139,15 @@ export const HowItWorks = ({ onOpenJoinModal }) => {
                   className="opacity-90"
                 />
                 <circle r="6" fill="#EAB308">
-                  <animate attributeName="cx" from="480" to="220" dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="cx" from="330" to="590" dur="2s" repeatCount="indefinite" />
                   <animate attributeName="cy" from="268.5" to="268" dur="2s" repeatCount="indefinite" />
                 </circle>
 
-                {/* Path 4: Card 4 (Volunteers) -> Left Hub */}
+                {/* Path 4: Card 4 (Volunteers) -> Right Hub */}
                 <line
-                  x1="220"
+                  x1="590"
                   y1="268"
-                  x2="480"
+                  x2="330"
                   y2="376.5"
                   stroke="#3B82F6"
                   strokeWidth="3"
@@ -155,15 +155,15 @@ export const HowItWorks = ({ onOpenJoinModal }) => {
                   className="opacity-90"
                 />
                 <circle r="6" fill="#3B82F6">
-                  <animate attributeName="cx" from="480" to="220" dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="cx" from="330" to="590" dur="2s" repeatCount="indefinite" />
                   <animate attributeName="cy" from="376.5" to="268" dur="2s" repeatCount="indefinite" />
                 </circle>
 
-                {/* Path 5: Card 5 (General Muslim Public) -> Left Hub */}
+                {/* Path 5: Card 5 (General Muslim Public) -> Right Hub */}
                 <line
-                  x1="220"
+                  x1="590"
                   y1="268"
-                  x2="480"
+                  x2="330"
                   y2="484.5"
                   stroke="#EF4444"
                   strokeWidth="3"
@@ -171,21 +171,21 @@ export const HowItWorks = ({ onOpenJoinModal }) => {
                   className="opacity-90"
                 />
                 <circle r="6" fill="#EF4444">
-                  <animate attributeName="cx" from="480" to="220" dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="cx" from="330" to="590" dur="2s" repeatCount="indefinite" />
                   <animate attributeName="cy" from="484.5" to="268" dur="2s" repeatCount="indefinite" />
                 </circle>
 
-                {/* Right Card Endpoint Dots */}
-                <circle cx="480" cy="52.5" r="6" fill="#22C55E" stroke="#FFFFFF" strokeWidth="1.5" />
-                <circle cx="480" cy="160.5" r="6" fill="#A855F7" stroke="#FFFFFF" strokeWidth="1.5" />
-                <circle cx="480" cy="268.5" r="6" fill="#EAB308" stroke="#FFFFFF" strokeWidth="1.5" />
-                <circle cx="480" cy="376.5" r="6" fill="#3B82F6" stroke="#FFFFFF" strokeWidth="1.5" />
-                <circle cx="480" cy="484.5" r="6" fill="#EF4444" stroke="#FFFFFF" strokeWidth="1.5" />
+                {/* Left Card Endpoint Dots */}
+                <circle cx="330" cy="52.5" r="6" fill="#22C55E" stroke="#FFFFFF" strokeWidth="1.5" />
+                <circle cx="330" cy="160.5" r="6" fill="#A855F7" stroke="#FFFFFF" strokeWidth="1.5" />
+                <circle cx="330" cy="268.5" r="6" fill="#EAB308" stroke="#FFFFFF" strokeWidth="1.5" />
+                <circle cx="330" cy="376.5" r="6" fill="#3B82F6" stroke="#FFFFFF" strokeWidth="1.5" />
+                <circle cx="330" cy="484.5" r="6" fill="#EF4444" stroke="#FFFFFF" strokeWidth="1.5" />
 
                 {/* ===================================================================== */}
-                {/* LEFT HUB CARD (NATIVE SVG FOR PERFECT CROSS-BROWSER SAFARI SUPPORT)   */}
+                {/* RIGHT HUB CARD (NATIVE SVG FOR PERFECT CROSS-BROWSER SAFARI SUPPORT)  */}
                 {/* ===================================================================== */}
-                <g transform="translate(70, 193)">
+                <g transform="translate(590, 193)">
                   {/* Glow Backdrop */}
                   <rect
                     x="0"
@@ -257,15 +257,15 @@ export const HowItWorks = ({ onOpenJoinModal }) => {
                   </text>
                 </g>
 
-                {/* Center Hub Connection Dot on Right Border of Left Card (x=220, y=268) */}
-                <circle cx="220" cy="268" r="7" fill="#5EC4F1" stroke="#FFFFFF" strokeWidth="2" />
+                {/* Center Hub Connection Dot on Left Border of Right Card (x=590, y=268) */}
+                <circle cx="590" cy="268" r="7" fill="#5EC4F1" stroke="#FFFFFF" strokeWidth="2" />
 
                 {/* ===================================================================== */}
-                {/* 5 RIGHT STAKEHOLDER CARDS EMBEDDED VIA FOREIGN OBJECT                */}
+                {/* 5 LEFT STAKEHOLDER CARDS EMBEDDED VIA FOREIGN OBJECT                 */}
                 {/* ===================================================================== */}
 
                 {/* CARD 1: Islamic Organizations (Y=5px) */}
-                <foreignObject x="480" y="5" width="265" height="95" className="overflow-visible">
+                <foreignObject x="65" y="5" width="265" height="95" className="overflow-visible">
                   <div xmlns="http://www.w3.org/1999/xhtml" style={{ width: '265px', height: '95px', minHeight: '95px', boxSizing: 'border-box' }} className="p-3 rounded-2xl border-2 border-[#22C55E] bg-[#151E32]/95 shadow-xl">
                     <div className="flex items-center justify-between">
                       <div className="px-3 py-1 rounded-xl bg-[#22C55E] text-white font-bold text-xs shadow-md flex items-center gap-2">
@@ -287,7 +287,7 @@ export const HowItWorks = ({ onOpenJoinModal }) => {
                 </foreignObject>
 
                 {/* CARD 2: Donors (Y=113px) */}
-                <foreignObject x="480" y="113" width="265" height="95" className="overflow-visible">
+                <foreignObject x="65" y="113" width="265" height="95" className="overflow-visible">
                   <div xmlns="http://www.w3.org/1999/xhtml" style={{ width: '265px', height: '95px', minHeight: '95px', boxSizing: 'border-box' }} className="p-3 rounded-2xl border-2 border-[#A855F7] bg-[#151E32]/95 shadow-xl">
                     <div className="flex items-center justify-between">
                       <div className="px-3 py-1 rounded-xl bg-[#A855F7] text-white font-bold text-xs shadow-md flex items-center gap-2">
@@ -309,7 +309,7 @@ export const HowItWorks = ({ onOpenJoinModal }) => {
                 </foreignObject>
 
                 {/* CARD 3: Business Owners (Y=221px) */}
-                <foreignObject x="480" y="221" width="265" height="95" className="overflow-visible">
+                <foreignObject x="65" y="221" width="265" height="95" className="overflow-visible">
                   <div xmlns="http://www.w3.org/1999/xhtml" style={{ width: '265px', height: '95px', minHeight: '95px', boxSizing: 'border-box' }} className="p-3 rounded-2xl border-2 border-[#EAB308] bg-[#151E32]/95 shadow-xl">
                     <div className="flex items-center justify-between">
                       <div className="px-3 py-1 rounded-xl bg-[#EAB308] text-slate-950 font-extrabold text-xs shadow-md flex items-center gap-2">
@@ -331,7 +331,7 @@ export const HowItWorks = ({ onOpenJoinModal }) => {
                 </foreignObject>
 
                 {/* CARD 4: Volunteers (Y=329px) */}
-                <foreignObject x="480" y="329" width="265" height="95" className="overflow-visible">
+                <foreignObject x="65" y="329" width="265" height="95" className="overflow-visible">
                   <div xmlns="http://www.w3.org/1999/xhtml" style={{ width: '265px', height: '95px', minHeight: '95px', boxSizing: 'border-box' }} className="p-3 rounded-2xl border-2 border-[#3B82F6] bg-[#151E32]/95 shadow-xl">
                     <div className="flex items-center justify-between">
                       <div className="px-3 py-1 rounded-xl bg-[#3B82F6] text-white font-bold text-xs shadow-md flex items-center gap-2">
@@ -353,7 +353,7 @@ export const HowItWorks = ({ onOpenJoinModal }) => {
                 </foreignObject>
 
                 {/* CARD 5: General Muslim Public (Y=437px) */}
-                <foreignObject x="480" y="437" width="265" height="95" className="overflow-visible">
+                <foreignObject x="65" y="437" width="265" height="95" className="overflow-visible">
                   <div xmlns="http://www.w3.org/1999/xhtml" style={{ width: '265px', height: '95px', minHeight: '95px', boxSizing: 'border-box' }} className="p-3 rounded-2xl border-2 border-[#EF4444] bg-[#151E32]/95 shadow-xl">
                     <div className="flex items-center justify-between">
                       <div className="px-3 py-1 rounded-xl bg-[#EF4444] text-white font-bold text-xs shadow-md flex items-center gap-2">
